@@ -8,23 +8,28 @@
     <title>Weather Dashboard</title>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css">
+    <!-- ///CSS LINK/// -->
 </head>
 
 <body>
     <header>
         <nav class="navbar bg-primary fw-bold">
             <div class="container-fluid">
-                <a class="navbar-brand">WEATHER DASHBOARD</a>
+                <a class="navbar-brand" style="color:antiquewhite">WEATHER DASHBOARD</a>
             </div>
         </nav>
-        <!-- ///Insert "CHOOSE A CITY" here!/// -->
+        <div class="fw-bold bg-primary" style="color:antiquewhite">CHOOSE YOUR CITY</div>
         <div class="col-3 col-md-3 col-xl-3">
-            <form class="align-left" role="search">
-                <input class="form-control me-2 align-left" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
+
+            <form id="searchForm">
+                <input id="searchInput" placeholder="Search"
+                    aria-label="Search">
+                <button class="btn btn-outline-success" type="submit" id="button">Search</button>
             </form>
         </div>
-        
+
+        <br>
+        <div class="forecast">5 Day Forecast</div>
         <br>
 
         <div class="d-flex col-12 col-md-12 col-xl-12 justify-content-between">
