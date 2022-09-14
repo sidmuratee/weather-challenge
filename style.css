@@ -1,4 +1,6 @@
 .forecast {
-    text-align: right;
-    font-size: x-large;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bolder;
+
 }

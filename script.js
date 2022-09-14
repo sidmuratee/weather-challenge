@@ -42,4 +42,6 @@ function handleFormSubmit(event) {
 
 searchForm.addEventListener( "submit" ,handleFormSubmit)
 
-    // function currentWeather(weatherData)
+    // function currentWeather(weatherData){
+
+    
