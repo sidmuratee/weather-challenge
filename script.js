@@ -3,35 +3,80 @@ let apiKey = '2010b8ae4ce65d9eb3560a2ab9904413'
 let searchInput = document.querySelector("#searchInput")
 let searchForm = document.querySelector("#searchForm")
 let button = document.querySelector("#button")
+let currentDiv = document.querySelector(".current")
 
-function callOne(userInput){
-let url = `http://api.openweathermap.org/geo/1.0/direct?q=${userInput}&appid=${apiKey}`
-fetch(url)
+function getCurrent(lat, lon) {
+    fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=imperial&appid=${apiKey}`)
+        .then(function (response) {
+            return response.json()
 
-    .then(function (response) {
+        })
+        .then(function (weatherData) {
+            console.log(weatherData);
+            let h2 = document.createElement('h2');
+            h2.textContent = weatherData.name;
 
-        return response.json()
+            let pTemp = document.createElement('p');
+            pTemp.textContent = 'Temperature: ' + weatherData.main.temp;
 
-    })
-    .then(function (cityData) {
+            let pWind = document.createElement('p');
+            pWind.textContent = `Wind: ${weatherData.wind.speed}`
+            
+            let pHumid = document.createElement('p');
+            pHumid.textContent = `Humidity: ${weatherData.main.humidity}`
 
+            currentDiv.appendChild(h2);
+            currentDiv.appendChild(pTemp);
+            currentDiv.appendChild(pHumid);
+            currentDiv.appendChild(pWind);
 
-        console.log(cityData[0].lat);
-        console.log(cityData[0].lon);
-        return { lat: cityData[0].lat, lon: cityData[0].lon };
-    })
-    .then(function (latLonData) {
-        return fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${latLonData.lat}&lon=${latLonData.lon}&units=imperial&appid=${apiKey}`)
-            .then(function (response) {
-                return response.json()
-
-            })
-            .then(function (weatherData) {
-                console.log(weatherData);
-
-            })
-    })
+            getForecast(lat, lon)
+        })
 }
+
+function getForecast(lat, lon) {
+    const card1Date = document.querySelector('.card1Date')
+    const temp1 = document.querySelector('#temp1')
+    const wind1 = document.querySelector('#wind1')
+    const humid1 = document.querySelector('#humidity1')
+
+    fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=imperial&appid=${apiKey}`)
+        .then(function (response) {
+            return response.json()
+
+        })
+        .then(function (weatherData) {
+            console.log(weatherData);
+            for (var i = 0; i < weatherData.list.length; i++) {
+                if (weatherData.list[i].dt_txt.includes('12:00:00')) {
+                    console.log(weatherData.list[i])
+                    let forecastData = weatherData.list[i];
+                    card1Date.textContent = forecastData.dt_txt;
+                    temp1.textContent = forecastData.main.temp
+                    wind1.textContent = forecastData.wind.speed
+                    humid1.textContent = forecastData.main.humidity
+                }
+            }
+        })
+}
+
+function callOne(userInput) {
+    let url = `http://api.openweathermap.org/geo/1.0/direct?q=${userInput}&appid=${apiKey}`
+    fetch(url)
+
+        .then(function (response) {
+            return response.json()
+        })
+        .then(function (cityData) {
+            console.log(cityData[0].lat);
+            console.log(cityData[0].lon);
+            let lat = cityData[0].lat;
+            let lon = cityData[0].lon
+            //return { lat: cityData[0].lat, lon: cityData[0].lon };
+            getCurrent(lat, lon)
+        })
+}
+
 
 function handleFormSubmit(event) {
     event.preventDefault()
@@ -40,8 +85,8 @@ function handleFormSubmit(event) {
     callOne(userInput);
 }
 
-searchForm.addEventListener( "submit" ,handleFormSubmit)
+searchForm.addEventListener("submit", handleFormSubmit)
 
     // function currentWeather(weatherData){
 
-    
+    // 
