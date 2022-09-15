@@ -60,6 +60,108 @@ function getForecast(lat, lon) {
         })
 }
 
+
+// function getForecast(lat, lon) {
+//     const card2Date = document.querySelector('.card2Date')
+//     const temp2 = document.querySelector('#temp2')
+//     const wind2 = document.querySelector('#wind2')
+//     const humid2 = document.querySelector('#humidity2')
+
+//     fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=imperial&appid=${apiKey}`)
+//         .then(function (response) {
+//             return response.json()
+
+//         })
+//         .then(function (weatherData) {
+//             console.log(weatherData);
+//             for (var i = 0; i < weatherData.list.length; i++) {
+//                 if (weatherData.list[i].dt_txt.includes('12:00:00')) {
+//                     console.log(weatherData.list[i])
+//                     let forecastData = weatherData.list[i];
+//                     card2Date.textContent = forecastData.dt_txt;
+//                     temp2.textContent = forecastData.main.temp
+//                     wind2.textContent = forecastData.wind.speed
+//                     humid2.textContent = forecastData.main.humidity
+//                 }
+//             }
+//         })
+// }
+// function getForecast(lat, lon) {
+//     const card1Date = document.querySelector('.card1Date')
+//     const temp1 = document.querySelector('#temp1')
+//     const wind1 = document.querySelector('#wind1')
+//     const humid1 = document.querySelector('#humidity1')
+
+//     fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=imperial&appid=${apiKey}`)
+//         .then(function (response) {
+//             return response.json()
+
+//         })
+//         .then(function (weatherData) {
+//             console.log(weatherData);
+//             for (var i = 0; i < weatherData.list.length; i++) {
+//                 if (weatherData.list[i].dt_txt.includes('12:00:00')) {
+//                     console.log(weatherData.list[i])
+//                     let forecastData = weatherData.list[i];
+//                     card1Date.textContent = forecastData.dt_txt;
+//                     temp1.textContent = forecastData.main.temp
+//                     wind1.textContent = forecastData.wind.speed
+//                     humid1.textContent = forecastData.main.humidity
+//                 }
+//             }
+//         })
+// }
+// function getForecast(lat, lon) {
+//     const card1Date = document.querySelector('.card1Date')
+//     const temp1 = document.querySelector('#temp1')
+//     const wind1 = document.querySelector('#wind1')
+//     const humid1 = document.querySelector('#humidity1')
+
+//     fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=imperial&appid=${apiKey}`)
+//         .then(function (response) {
+//             return response.json()
+
+//         })
+//         .then(function (weatherData) {
+//             console.log(weatherData);
+//             for (var i = 0; i < weatherData.list.length; i++) {
+//                 if (weatherData.list[i].dt_txt.includes('12:00:00')) {
+//                     console.log(weatherData.list[i])
+//                     let forecastData = weatherData.list[i];
+//                     card1Date.textContent = forecastData.dt_txt;
+//                     temp1.textContent = forecastData.main.temp
+//                     wind1.textContent = forecastData.wind.speed
+//                     humid1.textContent = forecastData.main.humidity
+//                 }
+//             }
+//         })
+// }
+// function getForecast(lat, lon) {
+//     const card1Date = document.querySelector('.card1Date')
+//     const temp1 = document.querySelector('#temp1')
+//     const wind1 = document.querySelector('#wind1')
+//     const humid1 = document.querySelector('#humidity1')
+
+//     fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=imperial&appid=${apiKey}`)
+//         .then(function (response) {
+//             return response.json()
+
+//         })
+//         .then(function (weatherData) {
+//             console.log(weatherData);
+//             for (var i = 0; i < weatherData.list.length; i++) {
+//                 if (weatherData.list[i].dt_txt.includes('12:00:00')) {
+//                     console.log(weatherData.list[i])
+//                     let forecastData = weatherData.list[i];
+//                     card1Date.textContent = forecastData.dt_txt;
+//                     temp1.textContent = forecastData.main.temp
+//                     wind1.textContent = forecastData.wind.speed
+//                     humid1.textContent = forecastData.main.humidity
+//                 }
+//             }
+//         })
+// }
+
 function callOne(userInput) {
     let url = `http://api.openweathermap.org/geo/1.0/direct?q=${userInput}&appid=${apiKey}`
     fetch(url)
@@ -86,6 +188,9 @@ function handleFormSubmit(event) {
 }
 
 searchForm.addEventListener("submit", handleFormSubmit)
+
+
+// render (handleFormSubmit(userInput)){}???/// to save prior searches?
 
     // function currentWeather(weatherData){
 
