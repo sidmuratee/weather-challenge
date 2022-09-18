@@ -32,10 +32,9 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-This project shows the current weather and 5-day weather forecast for any city in the world byt displaying the city name, date, temperature, wind and, humidity.
+This project shows the current weather and 5-day weather forecast for any city in the world by displaying the city name, date, temperature, wind and, humidity.
 
 
-![workday scheduler](https://user-images.githubusercontent.com/111321462/189505588-20ecdfe1-a930-4b10-9742-df011dac85d3.jpg)
 
 
 
