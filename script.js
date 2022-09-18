@@ -222,7 +222,7 @@ function getForecast(lat, lon) {
 }
 
 function callOne(userInput) {
-    let url = `http://api.openweathermap.org/geo/1.0/direct?q=${userInput}&appid=${apiKey}`
+    let url = `https://api.openweathermap.org/geo/1.0/direct?q=${userInput}&appid=${apiKey}`
     fetch(url)
 
         .then(function (response) {
