@@ -13,8 +13,8 @@ function getCurrent(lat, lon) {
         })
         .then(function (weatherData) {
             console.log(weatherData);
-            let h2 = document.createElement('h2');
-            h2.textContent = weatherData.name;
+            let cityName = document.getElementById('cityName');
+            cityName.textContent = weatherData.name;
 
             let temp = document.getElementById('temp');
             temp.textContent = 'Temperature: ' + weatherData.main.temp;
@@ -25,7 +25,7 @@ function getCurrent(lat, lon) {
             let humid = document.getElementById('humid');
             humid.textContent = `Humidity: ${weatherData.main.humidity}`
 
-            currentDiv.appendChild(h2);
+            currentDiv.appendChild(cityName);
             currentDiv.appendChild(temp);
             currentDiv.appendChild(humid);
             currentDiv.appendChild(wind);
