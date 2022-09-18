@@ -5,6 +5,7 @@ let searchForm = document.querySelector("#searchForm")
 let button = document.querySelector("#button")
 let currentDiv = document.querySelector(".current")
 
+
 function getCurrent(lat, lon) {
     fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=imperial&appid=${apiKey}`)
         .then(function (response) {
@@ -15,6 +16,8 @@ function getCurrent(lat, lon) {
             console.log(weatherData);
             let cityName = document.getElementById('cityName');
             cityName.textContent = weatherData.name;
+            let iconCurrent = document.querySelector("#iconCurrent")
+            iconCurrent.src = "https://openweathermap.org/img/w/" + weatherData.weather[0].icon + ".png"
 
             let temp = document.getElementById('temp');
             temp.textContent = 'Temperature: ' + weatherData.main.temp;
@@ -161,9 +164,11 @@ function getForecast(lat, lon) {
             for (var i = 0; i < weatherData.list.length; i++) {
                 if (weatherData.list[i].dt_txt.includes('12:00:00')) {
                     console.log(weatherData.list[i])
-                   
+
                     let forecastData1 = weatherData.list[7];
                     let card1Date = document.querySelector('.card1Date')
+                    // let icon1 = document.querySelector("#icon1")
+                    // icon1.src = "https://openweathermap.org/img/w/" + weatherData.weather[0].icon + ".png"
                     let temp1 = document.querySelector('#temp1')
                     let wind1 = document.querySelector('#wind1')
                     let humid1 = document.querySelector('#humidity1')
