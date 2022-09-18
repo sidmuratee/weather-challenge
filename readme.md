@@ -35,7 +35,8 @@
 This project shows the current weather and 5-day weather forecast for any city in the world byt displaying the city name, date, temperature, wind and, humidity.
 
 
-![workday scheduler](https://user-images.githubusercontent.com/111321462/189505588-20ecdfe1-a930-4b10-9742-df011dac85d3.jpg)
+![weatherdashreadmeSS](https://user-images.githubusercontent.com/111321462/190930641-abf53ddb-d8ae-47ac-8168-977dc1dd5856.jpg)
+
 
 
 
