@@ -167,8 +167,8 @@ function getForecast(lat, lon) {
 
                     let forecastData1 = weatherData.list[7];
                     let card1Date = document.querySelector('.card1Date')
-                    // let icon1 = document.querySelector("#icon1")
-                    // icon1.src = "https://openweathermap.org/img/w/" + weatherData.weather[0].icon + ".png"
+                    let icon1 = document.querySelector("#icon1")
+                    icon1.src = "https://openweathermap.org/img/w/" + weatherData.list[i].weather[0].icon + ".png"
                     let temp1 = document.querySelector('#temp1')
                     let wind1 = document.querySelector('#wind1')
                     let humid1 = document.querySelector('#humidity1')
@@ -179,6 +179,8 @@ function getForecast(lat, lon) {
 
                     let forecastData2 = weatherData.list[15];
                     let card2Date = document.querySelector('.card2Date')
+                    let icon2 = document.querySelector("#icon2")
+                    icon2.src = "https://openweathermap.org/img/w/" + weatherData.list[i].weather[0].icon + ".png"
                     let temp2 = document.querySelector('#temp2')
                     let wind2 = document.querySelector('#wind2')
                     let humid2 = document.querySelector('#humidity2')
@@ -189,6 +191,8 @@ function getForecast(lat, lon) {
 
                     let forecastData3 = weatherData.list[23];
                     let card3Date = document.querySelector('.card3Date')
+                    let icon3 = document.querySelector("#icon3")
+                    icon3.src = "https://openweathermap.org/img/w/" + weatherData.list[i].weather[0].icon + ".png"
                     let temp3 = document.querySelector('#temp3')
                     let wind3 = document.querySelector('#wind3')
                     let humid3 = document.querySelector('#humidity3')
@@ -199,6 +203,8 @@ function getForecast(lat, lon) {
 
                     let forecastData4 = weatherData.list[31];
                     let card4Date = document.querySelector('.card4Date')
+                    let icon4 = document.querySelector("#icon4")
+                    icon4.src = "https://openweathermap.org/img/w/" + weatherData.list[i].weather[0].icon + ".png"
                     let temp4 = document.querySelector('#temp4')
                     let wind4 = document.querySelector('#wind4')
                     let humid4 = document.querySelector('#humidity4')
@@ -209,6 +215,8 @@ function getForecast(lat, lon) {
 
                     let forecastData5 = weatherData.list[39];
                     let card5Date = document.querySelector('.card5Date')
+                    let icon5 = document.querySelector("#icon5")
+                    icon5.src = "https://openweathermap.org/img/w/" + weatherData.list[i].weather[0].icon + ".png"
                     let temp5 = document.querySelector('#temp5')
                     let wind5 = document.querySelector('#wind5')
                     let humid5 = document.querySelector('#humidity5')
